@@ -1,10 +1,10 @@
 %!TEX root = ../../../report.tex
-\section{Robot creation} % (fold)
+\section{Robot model creation} % (fold)
 \label{sec:robot_creation}
-One of the goals of the framework is to facilitate its continuity, thus this section is dedicated to explain how the robot was created, so that it can be modified in the future.
+One of the goals of the framework is to facilitate its further use and development.
+For this reason this section is dedicated to explain how the robot model was created for Gazebo, so that it can be modified in the future.
 
-A robot is defined as a set of links joined.
-A link contains at least three blocks of information:
+A robot is defined as a set of links joined, where a link contains at least three blocks of information:
 \begin{enumerate}
    \item The collision model: used to calculate the collisions with other agents in the simulation.
    \item The visual model: uniquely used for visual purposes.
@@ -29,15 +29,16 @@ The Figure \ref{fig:moments_of_inertia} shows the representation of these parame
   \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=.5\linewidth]{figures/gazebo_collision_model.png}
-    \caption{Gazebo showing the visual model, the moments of inertia and the collision model}
+    \caption{Gazebo showing the visual model, the moments of inertia and the collision model.}
     \label{fig:collision_model}
   \end{subfigure}
   \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=.5\linewidth]{figures/gazebo_intertia_moments.png}
-    \caption{Gazebo showing the visual model and the moments of inertia}
+    \caption{Gazebo showing the visual model and the moments of inertia.}
     \label{fig:moments_of_inertia}
   \end{subfigure}
+  \caption{Gazebo showing physical and visual propperties of RuBi.}
 \end{figure}
 
 It is essential to make sure that the visual models and moments of inertia are exported referred to the correct coordinate systems.
@@ -47,7 +48,7 @@ This can be seen in the Figure \ref{fig:solidworks_ankle_coodinate_system}.
 \begin{figure}[ht!]
   \centering
   \includegraphics[width=0.75\linewidth]{figures/solidworks_ankle_coordinate_system}
-  \caption{Coordinate system of the left ankle in SolidWorks}
+  \caption{Coordinate system of the left ankle in SolidWorks.}
   \label{fig:solidworks_ankle_coodinate_system}
 \end{figure}
 
@@ -58,5 +59,8 @@ To do so, the following has to be added to the RuBi description:
   \item \textbf{Contact sensors}: Simulates contact sensors as in the feet of the real robot.
   \item \textbf{Friction coefficients}: Defines the friction between the feet and the floor.
 \end{enumerate}
+
+The robot has been simulated with direct drive transmission, since the springs configurations has not been implemented because of the lack of time.
+This is left as further work.
 
 % section robot_creation (end)

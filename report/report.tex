@@ -5,7 +5,7 @@
 \usepackage[utf8]{inputenc} %Danish letters
 \usepackage{authblk} %Title
 \usepackage{graphicx}
-\usepackage{sectsty}w
+\usepackage{sectsty}
 \usepackage{mathcomp}
 \usepackage{caption}
 \usepackage{subcaption}
@@ -29,9 +29,9 @@
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert} %Use of \abs from mathtools
 
 %---Colors---%
-\definecolor{chapterColor}{HTML}{004685}
-\definecolor{sectionColor}{HTML}{087D9C}
-\definecolor{subSectionColor}{HTML}{07928A}
+\definecolor{chapterColor}{HTML}{000000}
+\definecolor{sectionColor}{HTML}{595959}
+\definecolor{subSectionColor}{HTML}{717171}
 \definecolor{defaultColor}{HTML}{222222}
 
 \chapterfont{\color{chapterColor}}
@@ -40,10 +40,8 @@
 \color{defaultColor}
 
 %---Fonts---%
-\usepackage{iwona}
-%\usepackage[default]{raleway}
-%\usepackage{inconsolata}
 \usepackage[T1]{fontenc}
+\usepackage{iwona}
 \renewcommand\textbullet{\ensuremath{\bullet}}
 
 %---Page Setup---%
@@ -75,7 +73,7 @@
 \nocite{*}
 
 %---Title---%
-\newcommand{\documentTitle}{Design, simulation and construction of RuBi, a bipedal platform for human-like locomotion studies}
+\newcommand{\documentTitle}{Design, simulation and construction of a bipedal platform for human-like locomotion studies}
 \newcommand{\documentType}{Master Thesis}
 
 \newcommand{\institute}{University of Southern Denmark}
@@ -85,13 +83,20 @@
 \newcommand{\authorOne}{Jorge Rodriguez Marin}
 \newcommand{\authorTwo}{Ignacio Torroba Balmori}
 
+\newcommand{\supervisorOne}{Jørgen Christian Larsen}
+\newcommand{\supervisorTwo}{Poramate Manoonpong}
+
 %---Document---%
 \begin{document}
     \frontmatter
     \include{chapters/cha_frontmatter/title}
+    \newpage \thispagestyle{empty} \mbox{}
     \include{chapters/cha_frontmatter/dedication}
+    \newpage \thispagestyle{empty} \mbox{}
     \include{chapters/cha_frontmatter/abstract} 
+    \newpage \thispagestyle{empty} \mbox{}
     \include{chapters/cha_frontmatter/resumen}
+    \newpage \thispagestyle{empty} \mbox{}
     \include{chapters/cha_frontmatter/acknowledgement}
     \singlespacing
     \tableofcontents

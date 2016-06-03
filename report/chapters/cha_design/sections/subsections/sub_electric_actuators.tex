@@ -34,12 +34,12 @@ Following the idea of reducing weight and inertias in the structure as explained
 In order to extend the existing motor flex interfaces, a simple extension PCB was manufactured for each device.
 The boards have been designed with Eagle following the requirements of current when sizing the width of the paths given by the supplier.
 The design lacks of vias which reduces the complexity and facilitates the manufacturing.
-The board for the left leg, whose schematic can be seen in \ref{fig:pcb1} \footnote{For the right leg the schematic has been mirrored}, contains a flex connector, like the one originally found on the motor boards, mapped to an 8-pin Molex connector where the wiring to the BLDC board is connected.
+The board for the left leg, whose schematic can be seen in \ref{fig:pcb1}\footnote{For the right leg the schematic has been mirrored}, contains a flex connector, like the one originally found on the motor boards, mapped to an 8-pin Molex connector where the wiring to the BLDC board is connected.
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/expansion_board.pdf}
-	\caption{Left leg extension PCB schematic}
+	\caption{Left leg extension PCB schematic.}
 	\label{fig:pcb1}
 \end{figure}
 
@@ -61,13 +61,13 @@ Algorithm 1:
 \item Compute forward kinematics to obtain $P_{j}(t)$.
 \item Derive the two mentioned models and apply equation \ref{eq:angular_magnitudes} to obtain $\dot{P}_{j}$, $\ddot{P}_{j}$, $\omega_{j}$, $\omega_{j}$, $\dot{\omega}_{j}$,
 \item Set $\Delta h$ and use the impulse equations \ref{eq:deltaV} and \ref{eq:impulse} to obtain a set of couple values of $(F_{i}, t_{i})$ as in Figure \ref{fig:f-t}.
-\item For each couple until $(F_{min}, t_{max})$, obtained from \ref{eq:work}, compute the torques $\tau_{i,j}$ for each joint through \ref{eq:dynamics_eq1} and $\theta_{i,j}$ as in \ref{eq:joint_vel}. \footnote{Eq. \ref{eq:joint_vel} introduced the assumption that the joint velocities are constant for simplicity}
+\item For each couple until $(F_{min}, t_{max})$, obtained from \ref{eq:work}, compute the torques $\tau_{i,j}$ for each joint through \ref{eq:dynamics_eq1} and $\theta_{i,j}$ as in \ref{eq:joint_vel_2}\footnote{Eq. \ref{eq:joint_vel_2} introduced the assumption that the joint velocities are constant for simplicity}.
 \item Compute the Torque/Speed curve for the motor + gearbox model as per equation \ref{eq:motor_curve}.
 \item Plot the obtained pairs of values $(\dot{\theta}_{i,j}, \tau_{i,j})$ over the motor curve and analyze the results.
 \end{enumerate}
 
 \begin{equation}
-\label{eq:joint_vel}
+\label{eq:joint_vel_2}
 	\dot{\theta}_{i,j} =\frac{ \abs{ \theta_{j}(t_{f}) - \theta_{j}(t_{o}) } }{ t_{i} }
 \end{equation}
 
@@ -113,10 +113,10 @@ The results can be seen in Figure \ref{fig:alg1_results} for a jumping leg.
 It can be seen that, for the obtained $(\theta_{i,j}, \tau_{i,j})$ values for the given $\Delta h$, the closer they get to the theoretical $(F_{min}, t_{max})$, the more the application points approach the lower-left corner of the graph.
 The aimed situation here is that in which the application points for the three motors lay under the motor curve, which occurs for values next to the couple $(4.1191N, 0.1700s)$
 
-\begin{figure}[h]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.9\textwidth]{figures/algorithm1.pdf}
-	\caption{Results of Algorithm 1 for the given inputs (not all the $(\theta_{i,j}, \tau_{i,j})$ pairs are plotted)}
+	\caption{Results of Algorithm 1 for the given inputs (not all the $(\theta_{i,j}, \tau_{i,j})$ pairs are plotted).}
 	\label{fig:alg1_results}
 \end{figure}
 
